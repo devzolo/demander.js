@@ -1,7 +1,7 @@
 {
   "name": "demander.js",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "dist",
   "author": "Raphael Zolotorevsky da Motta",
   "license": "MIT",
   "scripts": {
