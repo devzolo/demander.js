@@ -1,6 +1,6 @@
 import path from 'path';
 import { config as configDotenv } from 'dotenv';
-import DemanderClient from '../DemanderClient';
+import { DemanderClient } from '..';
 
 configDotenv({
   path: path.resolve(__dirname, '../../.env.test'),

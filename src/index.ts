@@ -1,1 +1,1 @@
-export * as DemanderClient from './DemanderClient';
+export * from './DemanderClient';

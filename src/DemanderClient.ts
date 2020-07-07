@@ -27,7 +27,7 @@ interface ExportacaoResponse {
   statusText: string;
 }
 
-export default class DemanderClient {
+export class DemanderClient {
   public static readonly IMPORTADOR = 'importador/importador.php';
 
   public static readonly UPLOAD_FOTO_PRODUTO = 'upload_foto_produto.php';
