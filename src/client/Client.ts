@@ -27,21 +27,21 @@ interface ExportacaoResponse {
   statusText: string;
 }
 
-export class DemanderClient {
+export class Client {
   public static readonly IMPORTADOR = 'importador/importador.php';
 
   public static readonly UPLOAD_FOTO_PRODUTO = 'upload_foto_produto.php';
 
   public static readonly EXPORTACAO_DADOS = 'exportacao_dados.php';
 
-  private static INSTANCE = new DemanderClient();
+  private static INSTANCE = new Client();
 
   public api = axios.create({
     baseURL: 'http://envio.erp.ws.demanderweb.com.br/demander/producao/webservice/integracao/retta',
   });
 
   public getApi(): AxiosInstance {
-    return DemanderClient.INSTANCE.api;
+    return Client.INSTANCE.api;
   }
 
   public async importacao(args: ImportacaoRequest): Promise<ImportacaoResponse> {
@@ -60,7 +60,7 @@ export class DemanderClient {
       'Content-Length': formData.getLengthSync(),
     };
 
-    const result = await this.getApi().post<string>(DemanderClient.IMPORTADOR, formData, { headers });
+    const result = await this.getApi().post<string>(Client.IMPORTADOR, formData, { headers });
     const { data, status, statusText } = result;
     const message = data.trim();
 
@@ -78,7 +78,7 @@ export class DemanderClient {
       'Content-Length': formData.getLengthSync(),
     };
 
-    const result = await this.getApi().post<string>(DemanderClient.EXPORTACAO_DADOS, formData, { headers });
+    const result = await this.getApi().post<string>(Client.EXPORTACAO_DADOS, formData, { headers });
     const { data, status, statusText } = result;
 
     const message = await this.loadFile(data.trim());

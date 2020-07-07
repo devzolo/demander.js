@@ -1,6 +1,6 @@
 import path from 'path';
 import { config as configDotenv } from 'dotenv';
-import { DemanderClient } from '..';
+import demander from '..';
 
 configDotenv({
   path: path.resolve(__dirname, '../../.env.test'),
@@ -9,9 +9,9 @@ configDotenv({
 describe('testing DemanderClient', () => {
   const token = process.env.DEMANDER_TEST_TOKEN ?? '';
   it('testing method importacao', async () => {
-    const demander = new DemanderClient();
+    const client = new demander.Client();
     try {
-      const result = await demander.importacao({
+      const result = await client.importacao({
         arquivo: path.join(__dirname, 'teste.txt'),
         token,
         forcar_importacao: true,
@@ -24,9 +24,9 @@ describe('testing DemanderClient', () => {
   });
 
   it('testing method exportacao', async () => {
-    const demander = new DemanderClient();
+    const client = new demander.Client();
     try {
-      const result = await demander.exportacao({
+      const result = await client.exportacao({
         token,
         periodoInicial: '11/07/2020 00:00:00',
       });
