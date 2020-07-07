@@ -2,24 +2,24 @@
   "compilerOptions": {
     "target": "es6",
     "module": "commonjs",
+    "declaration": true,
+    "declarationMap": true,
+    "declarationDir": "./dist",
     "outDir": "./dist",
     "rootDir": "./src",
     "strict": true,
     "strictPropertyInitialization": false,
     "baseUrl": "./src",
-    "paths": {
-      "@modules/*": ["modules/*"],
-      "@config/*": ["config/*"],
-      "@shared/*": ["shared/*"]
-    },
     "esModuleInterop": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "forceConsistentCasingInFileNames": true
-
   },
   "exclude": [
-    "**/*.spec.ts",
-    "**/__tests__/**/*.test.ts"
+    "src/**/*.spec.ts",
+    "src/**/__tests__/**/*.test.ts"
+  ],
+  "include": [
+    "src/**/*"
   ]
 }
