@@ -23,7 +23,6 @@ export declare class Client {
     static readonly IMPORTADOR = "importador/importador.php";
     static readonly UPLOAD_FOTO_PRODUTO = "upload_foto_produto.php";
     static readonly EXPORTACAO_DADOS = "exportacao_dados.php";
-    private static INSTANCE;
     api: AxiosInstance;
     getApi(): AxiosInstance;
     importacao(args: ImportacaoRequest): Promise<ImportacaoResponse>;

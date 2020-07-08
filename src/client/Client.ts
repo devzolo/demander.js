@@ -34,14 +34,12 @@ export class Client {
 
   public static readonly EXPORTACAO_DADOS = 'exportacao_dados.php';
 
-  private static INSTANCE = new Client();
-
   public api = axios.create({
     baseURL: 'http://envio.erp.ws.demanderweb.com.br/demander/producao/webservice/integracao/retta',
   });
 
   public getApi(): AxiosInstance {
-    return Client.INSTANCE.api;
+    return this.api;
   }
 
   public async importacao(args: ImportacaoRequest): Promise<ImportacaoResponse> {

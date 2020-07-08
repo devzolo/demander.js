@@ -24,7 +24,7 @@ class Client {
         });
     }
     getApi() {
-        return Client.INSTANCE.api;
+        return this.api;
     }
     importacao(args) {
         return __awaiter(this, void 0, void 0, function* () {
@@ -66,4 +66,3 @@ exports.Client = Client;
 Client.IMPORTADOR = 'importador/importador.php';
 Client.UPLOAD_FOTO_PRODUTO = 'upload_foto_produto.php';
 Client.EXPORTACAO_DADOS = 'exportacao_dados.php';
-Client.INSTANCE = new Client();
